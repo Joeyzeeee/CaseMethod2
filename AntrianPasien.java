@@ -18,3 +18,26 @@ class AntrianPasien {
         if (head == null) tail = null;
         return a;
     }
+    public void tampilkan() {
+        System.out.println("Antrian Pasien:");
+        Node temp = head;
+        while (temp != null) {
+            temp.data.tampilkanInformasi();
+            temp = temp.next;
+        }
+    }
+
+    public int sisa() {
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
+
+    public boolean kosong() {
+        return head == null;
+    }
+}
