@@ -56,8 +56,25 @@ public class MainKlinik {
                     System.out.println("Pasien telah dilayani, transaksi berhasil dicatat.");
                 }
                 break;
-                
-            }
-        }
+                case 4: {
+                    System.out.println(">> Sisa pasien dalam antrian: " + antrian.sisa());
+                }
+                break;
+                case 5: {
+                    System.out.println("-- Riwayat Transaksi --");
+                    riwayat.tampilkan();
+                }
+                break; 
 
+                case 0: { 
+                System.out.println("Keluar dari sistem.");
+                }
+                break;
+
+                default: System.out.println("Pilihan tidak valid!");
+                break;
+            }
+        } while (pilih != 0);
+    }
 }
+    
