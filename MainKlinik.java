@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MainKlinik {
     public static void main(String[] args) {
-        Scanner sc= new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         AntrianPasien antrian = new AntrianPasien();
         RiwayatTransaksi riwayat = new RiwayatTransaksi(100);
 
@@ -18,6 +18,44 @@ public class MainKlinik {
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
+
+            switch (pilih) {
+                case 1: {
+                    System.out.print("Nama Pasien: ");
+                    String nama = sc.nextLine();
+                    System.out.print("NIK: ");
+                    String nik = sc.nextLine();
+                    System.out.print("Keluhan: ");
+                    String keluhan = sc.nextLine();
+                    Pasien a = new Pasien(nama, nik, keluhan);
+                    antrian.tambah(a);
+                    System.out.println("Pasien masuk ke dalam antrian.");
+                }
+                break;
+                case 2: {
+                    System.out.println("-- Antrian Pasien --");
+                    antrian.tampilkan();
+                }
+                break;
+                case 3: {
+                    if (antrian.kosong()) {
+                        System.out.println("Antrian kosong!");
+                        break;
+                    }
+                    Pasien a = antrian.layani();
+                    System.out.println("Pasien " + a.nama + " dipanggil");
+                    System.out.print("Masukkan ID Dokter: ");
+                    String id = sc.nextLine();
+                    System.out.print("Masukkan Nama Dokter: ");
+                    String nama = sc.nextLine();
+                    System.out.print("Masukkan Durasi Layanan (jam): ");
+                    int durasi = sc.nextInt(); sc.nextLine();
+                    Dokter d = new Dokter(id, nama);
+                    TransaksiLayanan tr = new TransaksiLayanan(a, d, durasi);
+                    riwayat.tambah(tr);
+                    System.out.println("Pasien telah dilayani, transaksi berhasil dicatat.");
+                }
+                break;
                 
             }
         }
