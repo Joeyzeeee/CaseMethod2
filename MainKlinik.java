@@ -64,6 +64,11 @@ public class MainKlinik {
 
     static void layaniPasien() {
         Pasien a = antrian.layani();
+        if (a == null) {
+            System.out.println("Tidak ada pasien dalam antrian.");
+            return;
+        }
+    
         System.out.println("Pasien " + a.nama + " dipanggil");
         System.out.print("Masukkan ID Dokter: ");
         String id = sc.nextLine();
@@ -72,7 +77,7 @@ public class MainKlinik {
         System.out.print("Masukkan Durasi Layanan (jam): ");
         int durasi = sc.nextInt();
         sc.nextLine();
-
+    
         Dokter d = new Dokter(id, nama);
         TransaksiLayanan tr = new TransaksiLayanan(a, d, durasi);
         riwayat.tambah(tr);
