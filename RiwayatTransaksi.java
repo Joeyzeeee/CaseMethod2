@@ -1,6 +1,7 @@
 class RiwayatTransaksi {
     TransaksiLayanan[] data;
     int size;
+    Node head, tail;
 
     public RiwayatTransaksi(int kapasitas) {
         data = new TransaksiLayanan[kapasitas];
@@ -18,5 +19,9 @@ class RiwayatTransaksi {
         for (int i = 0; i < size; i++) {
             data[i].tampilkan();
         }
+    }
+
+    public boolean isEmpty() {
+        return head == null;
     }
 }

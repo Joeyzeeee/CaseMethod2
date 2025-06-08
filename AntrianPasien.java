@@ -22,6 +22,10 @@ class AntrianPasien {
     }
 
     public void tampilkan() {
+         if (isEmpty()) {
+            System.out.println("Antrian masih kosong!");
+            return;
+        }
         System.out.println("Antrian Pasien:");
         Node temp = head;
         while (temp != null) {
@@ -40,7 +44,7 @@ class AntrianPasien {
         return count;
     }
 
-    public boolean kosong() {
+    public boolean isEmpty() {
         return head == null;
     }
 }

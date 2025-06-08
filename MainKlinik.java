@@ -38,7 +38,7 @@ public class MainKlinik {
                 }
                     break;
                 case 3: {
-                    if (antrian.kosong()) {
+                    if (antrian.isEmpty()) {
                         System.out.println("Antrian kosong!");
                         break;
                     }
@@ -58,7 +58,7 @@ public class MainKlinik {
                 }
                     break;
                 case 4: {
-                    System.out.println(">> Sisa pasien dalam antrian: " + antrian.sisa());
+                    System.out.println("Sisa pasien dalam antrian: " + antrian.sisa());
                 }
                     break;
                 case 5: {
