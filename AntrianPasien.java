@@ -12,12 +12,15 @@ class AntrianPasien {
     }
 
     public Pasien layani() {
-        if (head == null) return null;
+        if (head == null)
+            return null;
         Pasien a = head.data;
         head = head.next;
-        if (head == null) tail = null;
+        if (head == null)
+            tail = null;
         return a;
     }
+
     public void tampilkan() {
         System.out.println("Antrian Pasien:");
         Node temp = head;

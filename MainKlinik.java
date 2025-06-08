@@ -31,12 +31,12 @@ public class MainKlinik {
                     antrian.tambah(a);
                     System.out.println("Pasien masuk ke dalam antrian.");
                 }
-                break;
+                    break;
                 case 2: {
-                    System.out.println("-- Antrian Pasien --");
+                    System.out.println("-=- Antrian Pasien -=-");
                     antrian.tampilkan();
                 }
-                break;
+                    break;
                 case 3: {
                     if (antrian.kosong()) {
                         System.out.println("Antrian kosong!");
@@ -49,32 +49,34 @@ public class MainKlinik {
                     System.out.print("Masukkan Nama Dokter: ");
                     String nama = sc.nextLine();
                     System.out.print("Masukkan Durasi Layanan (jam): ");
-                    int durasi = sc.nextInt(); sc.nextLine();
+                    int durasi = sc.nextInt();
+                    sc.nextLine();
                     Dokter d = new Dokter(id, nama);
                     TransaksiLayanan tr = new TransaksiLayanan(a, d, durasi);
                     riwayat.tambah(tr);
                     System.out.println("Pasien telah dilayani, transaksi berhasil dicatat.");
                 }
-                break;
+                    break;
                 case 4: {
                     System.out.println(">> Sisa pasien dalam antrian: " + antrian.sisa());
                 }
-                break;
+                    break;
                 case 5: {
                     System.out.println("-- Riwayat Transaksi --");
                     riwayat.tampilkan();
                 }
-                break; 
+                    break;
 
-                case 0: { 
-                System.out.println("Keluar dari sistem.");
+                case 0: {
+                    System.out.println("Keluar dari sistem.");
                 }
-                break;
+                    break;
 
-                default: System.out.println("Pilihan tidak valid!");
-                break;
+                default:
+                    System.out.println("Pilihan tidak valid!");
+                    break;
             }
         } while (pilih != 0);
+        sc.close();
     }
 }
-    
