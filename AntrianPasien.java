@@ -22,7 +22,7 @@ class AntrianPasien {
     }
 
     public void tampilkan() {
-         if (isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Antrian masih kosong!");
             return;
         }

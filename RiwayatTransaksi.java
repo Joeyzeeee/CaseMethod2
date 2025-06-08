@@ -15,17 +15,18 @@ class RiwayatTransaksi {
     }
 
     public void tampilkan() {
-        if (isEmpty()){
-            System.out.println("Belum ada transaksi");
+        if (isEmpty()) {
+            System.out.println("Belum ada riwayat transaksi.");
             return;
-        }
-        System.out.println("Daftar Transaksi:");
-        for (int i = 0; i < size; i++) {
-            data[i].tampilkan();
+        } else {
+            System.out.println("Daftar Transaksi:");
+            for (int i = 0; i < size; i++) {
+                data[i].tampilkan();
+            }
         }
     }
 
     public boolean isEmpty() {
-        return head == null;
+        return size == 0;
     }
 }
