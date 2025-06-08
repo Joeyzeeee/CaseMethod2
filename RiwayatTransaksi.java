@@ -15,6 +15,10 @@ class RiwayatTransaksi {
     }
 
     public void tampilkan() {
+        if (isEmpty()){
+            System.out.println("Belum ada transaksi");
+            return;
+        }
         System.out.println("Daftar Transaksi:");
         for (int i = 0; i < size; i++) {
             data[i].tampilkan();
