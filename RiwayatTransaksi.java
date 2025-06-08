@@ -1,7 +1,6 @@
 class RiwayatTransaksi {
     TransaksiLayanan[] data;
     int size;
-    Node head, tail;
 
     public RiwayatTransaksi(int kapasitas) {
         data = new TransaksiLayanan[kapasitas];
